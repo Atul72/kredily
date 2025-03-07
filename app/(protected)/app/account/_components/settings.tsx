@@ -23,7 +23,6 @@ import { settings } from "@/actions/settings";
 import { SettingsSchema } from "@/schemas";
 import { FormSuccess } from "@/components/form-success";
 import { FormError } from "@/components/form-error";
-// import { useCurrentUser } from "@/hooks/use-current-user";
 
 export const Settings = ({ user }) => {
   const [error, setError] = useState<string | undefined>();
@@ -59,9 +58,9 @@ export const Settings = ({ user }) => {
   };
 
   return (
-    <Card className="w-[600px] overflow-auto">
+    <Card className="w-[355px] md:w-[600px] overflow-auto">
       <CardHeader>
-        <p className="text-2xl font-semibold text-center">Settings Page</p>
+        <p className="text-2xl font-semibold text-center">Account Center</p>
       </CardHeader>
       <CardContent>
         <Form {...form}>

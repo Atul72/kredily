@@ -1,3 +1,5 @@
+"use server";
+
 import { SettingsSchema } from "@/schemas";
 import * as z from "zod";
 import { db } from "@/lib/db";
@@ -21,7 +23,7 @@ export const settings = async (values: z.infer<typeof SettingsSchema>) => {
   }
 
   if (values.email && values.email !== user.email) {
-    const existingUser = await getUserByEmail(user.email as string);
+    const existingUser = await getUserByEmail(values.email as string);
 
     if (existingUser) {
       return { error: "Email already in use" };
